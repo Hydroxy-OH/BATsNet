@@ -3,10 +3,9 @@ Description=The service of radar sensor
 After=network.target
 
 [Service]
-EnvironmentFile=/etc/profile.d/fog_env.sh
 Type=simple
 WorkingDirectory=/opt/aiot
-ExecStart=/opt/aiot/bin/radar_controller /opt/aiot/conf/radar/radar_deploy.pb.txt
+ExecStart=/bin/bash -c 'source /etc/profile.d/fog_env.sh && /opt/aiot/bin/radar_controller /opt/aiot/conf/radar/radar_deploy.pb.txt'
 Restart=always
 RestartSec=1
 User=nvidia
