@@ -8,6 +8,9 @@ cd /opt/aiot/buf
 TIMESTAMP=$(date '+%Y-%m-%d-%H-%M-%S')
 TAR_FILE=${NODE_NAME}-${TIMESTAMP}.tar.gz
 
+mkdir -p mp4
+mv /opt/aiot/*.mp4 mp4
+
 tar -cvf $TAR_FILE --remove-files */*
 
 rsync -avzh -e 'ssh -p 2202' \
