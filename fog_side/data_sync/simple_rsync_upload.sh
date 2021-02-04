@@ -11,7 +11,7 @@ TAR_FILE=${NODE_NAME}-${TIMESTAMP}.tar.gz
 mkdir -p mp4
 mv /opt/aiot/*.mp4 mp4
 
-tar -cvf $TAR_FILE --remove-files */*
+tar -zcvf $TAR_FILE --remove-files */*
 
 rsync -avzh -e 'ssh -p 2202' \
     $TAR_FILE testbed@137.189.97.26:/home/testbed/lamppost_data_backup
