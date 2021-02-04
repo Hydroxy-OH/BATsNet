@@ -38,7 +38,7 @@ void LocalSaving(livox::livoxDriver *driver, const lidar::DeviceConf &conf) {
       bool flag = collector_->SendData(out_topic.c_str(), data_str.c_str(),
                                        data_str.size());
     }
-    std::this_thread::sleep_for(std::chrono::microseconds(100));
+    std::this_thread::sleep_for(std::chrono::microseconds(10));
   }
 }
 

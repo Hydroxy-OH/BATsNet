@@ -62,7 +62,7 @@ BufWriter::BufWriter(const std::string &topic) {
   fs::create_directories(name);
   fname_ = name + "/" + GetNowTimeStramp();
   sfname_ = sname + "/" + GetNowTimeStramp();
-  f_ = gzopen(fname_.c_str(), "wb");
+  f_ = gzopen(fname_.c_str(), "w2");
 }
 
 BufWriter::~BufWriter() {
