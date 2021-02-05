@@ -51,6 +51,7 @@ void livoxDriver::HandlePointCloud(LivoxPointXyzrtl *begin,
   accumulated_packet_++;
 }
 bool livoxDriver::poll(PointCloud *cloud) {
+  cloud->Clear();
   if (accumulated_packet_ >= packet_per_publish_) {
     std::lock_guard<std::mutex> lock(mtx_);
     cloud->CopyFrom(cloud_);
