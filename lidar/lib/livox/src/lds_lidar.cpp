@@ -283,7 +283,7 @@ void LdsLidar::OnDeviceChange(const DeviceInfo *info, DeviceEvent type) {
       printf("Device State Change Progress %u\n",
              p_lidar->info.status.progress);
     } else {
-      printf("Device State Error Code 0X%08x\n",
+      printf("Device State Error Code [%s] 0X%08x\n", info->broadcast_code,
              p_lidar->info.status.status_code.error_code);
     }
     printf("Device feature %d\n", p_lidar->info.feature);
