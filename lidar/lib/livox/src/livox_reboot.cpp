@@ -45,10 +45,11 @@ int main(int argc, const char *argv[]) {
 
   printf("Start discovering device.\n");
 
-  std::this_thread::sleep_for(std::chrono::seconds(100));
+  std::this_thread::sleep_for(std::chrono::seconds(10));
 
   read_lidar.RebootAllConnected();
-
+  printf("Send Reboot Cmd!\n");
+  std::this_thread::sleep_for(std::chrono::seconds(2));
   read_lidar.DeInitLdsLidar();
   printf("Livox lidar demo end!\n");
 }
