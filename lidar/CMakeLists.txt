@@ -50,6 +50,11 @@ if(INSTALL_DRIVER)
     add_executable(lidar_controller src/controller.cc)
     target_link_libraries(lidar_controller lidar_control_lib service_node)
 
+    ## For DEBUG
+    add_executable(livox_data_viewer src/livox_data_viewer.cc)
+    target_link_libraries(livox_data_viewer livox_lidar_lib
+    lidar_proto ${Protobuf_LIBRARIES} data_collector transport service_node)
+
     set(LIDAR_CONF_INSTALL_DIR ${BATSNET_CONF_INSTALL_DIR}/lidar)
     install(DIRECTORY DESTINATION ${LIDAR_CONF_INSTALL_DIR})
     install(DIRECTORY conf/ DESTINATION ${LIDAR_CONF_INSTALL_DIR})
