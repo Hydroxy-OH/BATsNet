@@ -135,6 +135,15 @@ int LdsLidar::DeInitLdsLidar(void) {
   return 0;
 }
 
+void LdsLidar::RebootAllConnected(void) {
+  for (int i = 0; i < lidar_count_; ++i) {
+    RebootDevice(
+        i, 0,
+        [](livox_status status, uint8_t handle, uint8_t response,
+           void *client_data) -> void {},
+        (void *)g_lidars);
+  }
+}
 /** Static function in LdsLidar for callback or event process
  * ------------------------------------*/
 

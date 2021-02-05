@@ -47,6 +47,7 @@ public:
 
   int InitLdsLidar(std::vector<std::string> &broadcast_code_strs);
   int DeInitLdsLidar(void);
+  void RebootAllConnected(void);
 
   static std::function<void(LivoxPointXyzrtl *begin, LivoxPointXyzrtl *end)>
       pointcloud_handle_;

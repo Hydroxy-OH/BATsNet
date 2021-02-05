@@ -29,4 +29,7 @@ if(INSTALL_DRIVER)
   add_library(livox_lidar_lib STATIC src/lds_lidar.cpp src/livox_driver.cpp src/lds.cpp src/ldq.cpp)
   target_link_libraries(livox_lidar_lib livox_lidar_proto livox_sdk_static ${Boost_LIBRARIES})
   target_include_directories(livox_lidar_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/proto ${CMAKE_CURRENT_SOURCE_DIR}/src)
+
+  add_executable(livox_reboot src/livox_reboot.cpp)
+  target_link_libraries(livox_reboot livox_lidar_lib lidar_proto ${Protobuf_LIBRARIES})
 endif(INSTALL_DRIVER)
