@@ -28,6 +28,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <thread>
+#include <unordered_set>
 
 /** Const varible
  * -------------------------------------------------------------------------------
@@ -207,6 +208,7 @@ void LdsLidar::GetLidarDataCb(uint8_t handle, LivoxEthPacket *data,
 }
 
 void LdsLidar::OnDeviceBroadcast(const BroadcastDeviceInfo *info) {
+  static std::unordered_set<std::string> warned;
   if (info == nullptr) {
     return;
   }
@@ -222,8 +224,11 @@ void LdsLidar::OnDeviceBroadcast(const BroadcastDeviceInfo *info) {
            info->broadcast_code);
   } else {
     if (!g_lidars->FindInWhitelist(info->broadcast_code)) {
-      printf("Not in the whitelist, please add %s to if want to connect!\n",
-             info->broadcast_code);
+      if (warned.find(std::string(info->broadcast_code)) == warned.end()) {
+        printf("Not in the whitelist, please add %s to if want to connect!\n",
+               info->broadcast_code);
+        warned.insert(std::string(info->broadcast_code));
+      }
       return;
     }
   }
