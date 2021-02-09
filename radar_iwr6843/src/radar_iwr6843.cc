@@ -115,7 +115,8 @@ int main(int argc, char *argv[]) {
   auto modes = conf.conf().possible_mode();
   const auto &cfg_file = modes.at(conf.state().current_mode());
   radar::Reader_IWR6843 reader(control_port, B115200, data_port, B921600);
-  reader.Setup(cfg_file.c_str());
+  // // The Setup call will write cfg
+  // reader.Setup(cfg_file.c_str());
 
   const auto &topic = base_conf.identifier();
   service_discovery::ServiceNode node(topic);

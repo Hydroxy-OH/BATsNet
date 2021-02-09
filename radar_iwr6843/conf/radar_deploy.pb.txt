@@ -13,7 +13,7 @@ conf: {
     }
     possible_mode {
         key: "OUTDOOR"
-        value: "/opt/aiot/conf/radar/cfg/a.cfg"
+        value: "/opt/aiot/conf/radar/cfg/profile_corner.cfg"
     }
     # Can remove this mode to disable user cfg
     possible_mode {
@@ -24,10 +24,10 @@ conf: {
 
 state: {
     base: {
-        mode: SHARING
-        # mode: LOCAL_SAVING
+        # mode: SHARING
+        mode: LOCAL_SAVING
     }
-    current_mode: "INDOOR"
+    current_mode: "OUTDOOR"
 }
 
 read_parsed: true
