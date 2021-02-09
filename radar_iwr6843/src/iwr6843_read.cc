@@ -37,9 +37,10 @@ Reader_IWR6843::Reader_IWR6843(const char *cli_sock, const speed_t cli_baudrate,
 }
 
 Reader_IWR6843::~Reader_IWR6843() {
-  char stop_cmd[] = "sensorStop\n";
-  WriteToSerial(cli_fd_, stop_cmd, sizeof(stop_cmd));
-  std::this_thread::sleep_for(std::chrono::milliseconds(100));
+  // // Reset the connection
+  // char stop_cmd[] = "sensorStop\n";
+  // WriteToSerial(cli_fd_, stop_cmd, sizeof(stop_cmd));
+  // std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
   close(cli_fd_);
   close(data_fd_);
