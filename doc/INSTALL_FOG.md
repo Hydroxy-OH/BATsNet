@@ -188,6 +188,7 @@ sudo systemctl enable etcd
 # git submodule update --init
 mkdir build
 pushd build
+sudo ldconfig
 cmake -DIN_FOG=ON ..
 make -j4
 popd
