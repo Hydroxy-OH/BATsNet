@@ -113,7 +113,8 @@ popd
 popd
 
 # grpc (1.35.0)
-git clone https://github.com/grpc/grpc.git
+# git clone https://github.com/grpc/grpc.git
+wget https://github.com/grpc/grpc/archive/refs/tags/v1.35.0.tar.gz
 pushd grpc/
 git submodule update --init
 mkdir -p cmake/build
