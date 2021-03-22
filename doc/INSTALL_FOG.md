@@ -112,7 +112,7 @@ sudo make install
 popd
 popd
 
-# grpc
+# grpc (1.35.0)
 git clone https://github.com/grpc/grpc.git
 pushd grpc/
 git submodule update --init
