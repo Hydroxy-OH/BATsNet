@@ -67,18 +67,14 @@ https://cmake.org/download/
 ```
 sudo apt install -y libssl-dev
 
+sudo apt remove cmake
+
 curl -LO https://github.com/Kitware/CMake/releases/download/v3.19.0-rc3/cmake-3.19.0-rc3.tar.gz
 tar zxvf cmake-3.19.0-rc3.tar.gz
 rm -rf cmake-3.19.0-rc3.tar.gz
-pushd cmake-3.19.0-rc3
-mkdir build
-pushd build
-cmake ..
-make -j4
-sudo make install
-popd
-popd
-```
+./bootstrap
+make
+sudo  make install
 
 ## Step 4: Installing Environment
 
