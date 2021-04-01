@@ -3,7 +3,7 @@
 ## Step 1: Install the OS
 
 Flash the Jetpack 4.2.1
-
+Mount the data disk at `/opt/aiot`
 ### Set disk
 The disk mount: need add `nofail` to it option
 
@@ -80,15 +80,15 @@ sudo  make install
 
 1. Mount the data disk at `/opt/aiot`
 2. Install all dependency
-
-```
+3. 
 sudo apt update && sudo apt install -y libmosquitto-dev \
     libmosquittopp-dev libssl-dev liblz4-dev \
     build-essential pkg-config \
-    cmake autoconf automake libtool curl make g++ unzip \
+    autoconf automake libtool curl make g++ unzip \
     python3.6-dev libboost-all-dev libyaml-cpp-dev libpcap-dev \
     openssh-server libc-ares2 libc-ares-dev
-
+```
+```
 # protobuf
 curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v3.12.3/protobuf-all-3.12.3.tar.gz
 tar zxvf protobuf-all-3.12.3.tar.gz
