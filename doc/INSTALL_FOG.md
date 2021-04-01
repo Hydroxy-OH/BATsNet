@@ -1,4 +1,3 @@
-## Ste
 
 ## Step 1: Install the OS
 
