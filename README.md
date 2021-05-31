@@ -10,7 +10,7 @@ Provide the underlying function and interface in fog side: `common`, `data_colle
 
 Related to the sensor: `camera`, `radar_iwr6843`, `lidar`
 
-Used in fog side, but not used by the user task or sensor: `fog_size`
+Used in fog side, but not used by the user task or sensor: `fog_side`
 
 # Download this library
 ```
